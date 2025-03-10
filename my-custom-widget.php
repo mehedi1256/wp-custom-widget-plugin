@@ -16,6 +16,7 @@
 
  add_action('widgets_init', 'mcw_register_widget');
 
+ include_once plugin_dir_path(__FILE__) . 'My_Custom_Widget.php';
  function mcw_register_widget() {
     register_widget('My_Custom_Widget');
  }
