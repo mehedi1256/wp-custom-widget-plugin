@@ -20,3 +20,14 @@
  function mcw_register_widget() {
     register_widget('My_Custom_Widget');
  }
+
+//  add admin panel script
+
+add_action('admin_enqueue_scripts', 'mcw_add_admin_script');
+
+function mcw_add_admin_script() {
+   // for css
+   wp_enqueue_style('mcw_style', plugin_dir_url(__FILE__) . 'style.css');
+   // for js
+   wp_enqueue_script('admin-script', plugin_dir_url(__FILE__) . 'script.js', array('jquery'));
+}
